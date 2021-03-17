@@ -1,0 +1,204 @@
+@import url("https://use.typekit.net/koe0wht.css");
+:root {
+    --fw-1: 300;
+    --fw-2: 700;
+    --fw-3: 900;
+    --fs-1: 1.125rem;
+    --fs-2: 1.25rem;
+    --fs-3: 2rem;
+    --fs-small: .75rem;
+    --clr-dark: rgba(0, 0, 0, .25);
+    --clr-body: rgba(255, 255, 255, .8);
+    --bg-color: #3aae9b;
+    --bg-color-light: #84f3df;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    font-family: motiva-sans, sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    background-image: url("assets/bg2.jpeg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--clr-body);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-1);
+    line-height: 1.6;
+}
+
+p {
+    margin: 0 0 .25em;
+}
+
+a {
+    color: var(--clr-1);
+}
+
+a:hover {
+    color: inherit;
+}
+
+.logo {
+    height: 50px;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    /*so that the little checkbox lines up with the text*/
+}
+
+.title,
+.subheading {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5px;
+}
+
+.title {
+    font-size: var(--fs-3);
+    font-weight: var(--fw-3);
+}
+
+.subheading {
+    font-size: var(--fs-2);
+    margin-top: 0;
+}
+
+.fineprint {
+    font-size: var(--fs-small);
+}
+
+.button {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    background: var(--clr-dark);
+    padding: .5em 1.75em;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .9);
+    font-weight: var(--fw-3);
+    transform: scale(1);
+    transition: transform ease-in-out 150;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button+* {
+    margin-left: 2em;
+}
+
+.steam-login-form {
+    display: inline;
+    width: 600px;
+    position: relative;
+    /*so its not position inside of the document*/
+}
+
+.front {
+    background-color: var(--bg-color);
+    background-image: linear-gradient( var(--bg-color-light), var(--bg-color));
+    padding: 3rem;
+    grid-row: 1/4;
+    grid-column: 2/3;
+    /*to make sure it goes from the top all the way to the bottom*/
+}
+
+.form {
+    margin: 1.5em 0 0;
+}
+
+.form__label {
+    display: flex;
+    ;
+}
+
+.form__text {
+    all: unset;
+    display: block;
+    margin: .25em 0 1em;
+    background: var(--clr-dark);
+    width: 100%;
+    padding: .6em;
+}
+
+.form__tooltip {
+    font-size: var(--fs-small);
+    background: var(--clr-dark);
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    text-align: center;
+    align-self: center;
+    margin-left: .5em;
+    position: relative;
+}
+
+.form__tooltip::after {
+    content: attr(data-tooltip);
+    display: none;
+    /*so when we hover, it changes to block*/
+    position: absolute;
+    padding: 1em;
+    background: var(--clr-dark);
+    bottom: 1.5em;
+    text-align: left;
+    width: 250px;
+    color: var(--clr-1);
+}
+
+.form__tooltip:hover::after {
+    display: block;
+}
+
+.form__checkbox {
+    margin-right: .5em;
+}
+
+.fineprint {
+    font-size: var(--fs-small);
+}
+
+@media screen and (max-width: 480px) {
+    .title,
+    .subheading {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 20px;
+    }
+    .title {
+        font-size: 1.25rem;
+        font-weight: var(--fw-3);
+    }
+    .subheading {
+        font-size: var(--fs-2);
+        margin-top: 0;
+    }
+    .steam-login-form {
+        display: flex;
+        max-width: 400px;
+        max-height: 100%;
+    }
+    .front {
+        background-color: var(--bg-color);
+        max-width: 100%;
+    }
+    .steam-login-form img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
